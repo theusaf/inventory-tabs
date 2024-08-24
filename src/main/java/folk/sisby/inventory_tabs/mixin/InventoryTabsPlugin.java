@@ -28,7 +28,7 @@ public class InventoryTabsPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         if (mixinClassName.startsWith("folk.sisby.inventory_tabs.mixin.")) {
-            if (FabricLoader.INSTANCE.isModLoaded("connectormod") && FORGE_BANNED_MIXINS.contains(mixinClassName)) {
+            if (FabricLoader.INSTANCE.isModLoaded("connector") && FORGE_BANNED_MIXINS.contains(mixinClassName)) {
                 return false;
             }
             if (!InventoryTabs.CONFIG.consistentContainers && (mixinClassName.contains("GenericContainer") || mixinClassName.contains("ShulkerBox"))) {
