@@ -40,6 +40,7 @@ public class SimpleBlockTabProvider extends BlockTabProvider {
         blacklist.put(InventoryTabs.id("chiseled_bookshelf_block"), b -> b instanceof ChiseledBookshelfBlock);
         blacklist.put(InventoryTabs.id("decorated_pot_block"), b -> b instanceof DecoratedPotBlock);
         blacklist.put(InventoryTabs.id("brushable_block"), b -> b instanceof BrushableBlock);
+        blacklist.put(InventoryTabs.id("trial_spawner_block"), b -> b instanceof TrialSpawnerBlock);
         matches.put(InventoryTabs.id("block_entity_provider_blacklist"), b -> b instanceof BlockEntityProvider && blacklist.values().stream().noneMatch(p -> p.test(b)));
     }
 
